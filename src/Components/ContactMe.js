@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ComponentContainerDiv, TextH4, Button } from "../StyledComponents/StyledComponents";
 import styled from "styled-components";
 import ContactsIcons from "./ContactsIcons";
@@ -12,29 +12,46 @@ const ContactMe = React.forwardRef((props, ref) => {
         message: ''
     })
 
+    const nameRef = useRef()
+    const emailRef = useRef()
+    const messageRef = useRef()
+
     const handleSumbit = (event) => {
         event.preventDefault()
 
-        send (
-            'service_xlau9qh',
-            'template_gt98oga',
-            {
-                from_name: toSend.name,
-                to_name: 'Matteo',
-                message: toSend.message,
-            },
-            '8RZCv5wM6WZvMsJeg'
-        ).then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
-            alert('Email sent to Matteo. Thank you!')
-            setToSend({
-                name: '',
-                email: '',
-                message: ''
-            })
-        }).catch((err) => {
-            alert("There is an error with the Email service, try angain later or send an email directly to matteomarcotulli@gmail.com")
-        });
+        if(toSend.name.length < 1) {
+            nameRef.current.focus()
+        } else if(toSend.email.length < 1 || !validEmail(toSend.email)) {
+            emailRef.current.focus()
+        } else if(toSend.message.length < 1) {
+            messageRef.current.focus()
+        } else {
+            send (
+                'service_xlau9qh',
+                'template_gt98oga',
+                {
+                    from_name: toSend.name,
+                    to_name: 'Matteo',
+                    message: toSend.message,
+                },
+                '8RZCv5wM6WZvMsJeg'
+            ).then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Email sent to Matteo. Thank you!')
+                setToSend({
+                    name: '',
+                    email: '',
+                    message: ''
+                })
+            }).catch((err) => {
+                alert("There is an error with the Email service, try angain later or send an email directly to matteomarcotulli@gmail.com")
+            });
+        }        
+    }
+
+    const validEmail = (email) => {
+        var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+        return String(email).search (filter) != -1;
     }
 
     return (
@@ -47,13 +64,13 @@ const ContactMe = React.forwardRef((props, ref) => {
                 </FlexBoxHorizontalDiv>
                 <FlexBoxHorizontalDiv>
                     <Form onSubmit={handleSumbit}>
-                        <Input type='text' value={toSend.name} height={'30px'}
+                        <Input type='text' value={toSend.name} height={'30px'} ref={nameRef}
                          onChange={(e) => setToSend({...toSend, name: e.target.value})}
                          placeholder='Your Name...'/>
-                        <Input type='email' value={toSend.email} height={'30px'}
+                        <Input type='email' value={toSend.email} height={'30px'} ref={emailRef}
                          onChange={(e) =>  setToSend({...toSend, email: e.target.value})}
                          placeholder='Your Email...'/>
-                        <Textarea value={toSend.message} height={'150px'}
+                        <Textarea value={toSend.message} height={'150px'} ref={messageRef}
                          onChange={(e) =>  setToSend({...toSend, message: e.target.value})}
                          placeholder='Your Message...'/>
                         <Button>Send</Button>
