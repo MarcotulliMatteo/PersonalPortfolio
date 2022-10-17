@@ -1,8 +1,10 @@
+import React from "react";
 import { ComponentContainerDiv, ComponentSubContainerDiv, SectionTitleH2, TextH4, Button } from "../StyledComponents/StyledComponents";
+import { SECTIONS } from "../Utils/constants";
 
-const AboutMe = () => {
+const AboutMe = React.forwardRef((props, ref) => {
     return (
-        <ComponentContainerDiv color={'black'}>
+        <ComponentContainerDiv color={'black'} ref={ref}>
             <ComponentSubContainerDiv>
                 <SectionTitleH2 color={'white'}>About Me</SectionTitleH2>
 
@@ -12,12 +14,12 @@ with a strong knowledge of cross platform coding.
 Worked with different platforms as Backend Cloud SAP Systems, Backend Google Cloud Systems, Front End Android, Front End Hybrid Application languages as React Native and last but not least Api interfaces, Front End Web Application as React and Sapui5 .
 
 I'm a hard worker, fast learner and a very motivated person.
-Feel free to connect !</TextH4>
+Feel free to contact me !</TextH4>
 
-                <Button>Contact Me</Button>
+                <Button onClick={() => props.executeScrollToSection(SECTIONS.CONTACTME)}>Contact Me</Button>
             </ComponentSubContainerDiv>
         </ComponentContainerDiv>
     )
-}
+})
 
 export default AboutMe;

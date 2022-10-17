@@ -1,12 +1,13 @@
+import React from "react";
 import styled from "styled-components";
 import homebackground from "../Images/home.jpg";
 
 import { TextH1, TextH3, TextH4, YellowSpan } from "../StyledComponents/StyledComponents";
 import ContactsIcons from "./ContactsIcons";
 
-const MainSection = () => {
+const MainSection = React.forwardRef((props, ref) => {
     return (
-        <HomeContainerDiv>
+        <HomeContainerDiv ref={ref}>
             <HomeDiv>
                 <TextH3>Hi! I'm Matteo.</TextH3>
                 <TextH1>A <YellowSpan>Full Stack Developer</YellowSpan></TextH1>
@@ -18,7 +19,7 @@ const MainSection = () => {
             </HomeDiv>
         </HomeContainerDiv>
     )
-}
+})
 
 export default MainSection;
 

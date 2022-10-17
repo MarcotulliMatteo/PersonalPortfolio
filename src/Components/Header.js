@@ -1,18 +1,29 @@
 import styled from "styled-components";
 import { YellowSpan } from "../StyledComponents/StyledComponents";
+import { SECTIONS } from "../Utils/constants";
+import useViewport from "../CustomHooks/useViewport";
+import { AiOutlineMenu } from "react-icons/ai";
 
-const Header = () => {
+const Header = (props) => {
+    const { width } = useViewport()
+
     return (
         <HeaderContainerDiv>
             <HeaderDiv>
                 <HeaderH2>Matteo<YellowSpan>.</YellowSpan></HeaderH2>
-                <HeaderButtonContainer>
-                    <HeaderH3>Home</HeaderH3>
-                    <HeaderH3>Services</HeaderH3>
-                    <HeaderH3>About me</HeaderH3>
-                    <HeaderH3>Projects</HeaderH3>
-                    <HeaderH3>Contact me</HeaderH3>
-                </HeaderButtonContainer>
+                {
+                    width > 900 ? 
+                        <HeaderButtonContainer>
+                            <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.MAINSECTION)}>Home</HeaderH3>
+                            <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.KNOWLEDGE)}>Knowledge</HeaderH3>
+                            <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.ABOUTME)}>About me</HeaderH3>
+                            <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.RECENTPROJECTS)}>Projects</HeaderH3>
+                            <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.CONTACTME)}>Contact me</HeaderH3>
+                        </HeaderButtonContainer>
+                    :
+                        <StyledAiOutlineMenu size={25} onClick={() => props.onDrawerClick()}/>
+                }
+                
             </HeaderDiv>
         </HeaderContainerDiv>
     )
@@ -39,7 +50,6 @@ const HeaderDiv = styled.div`
     justify-content: space-between;
 `
 
-
 const HeaderButtonContainer = styled.div`
     display: flex;
     gap: 20px;
@@ -56,4 +66,8 @@ const HeaderH3 = styled.h3`
     &:hover {
         border-bottom: 3px solid yellow;
     }
+`
+
+const StyledAiOutlineMenu = styled(AiOutlineMenu)`
+    color: white;
 `

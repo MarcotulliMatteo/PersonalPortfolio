@@ -1,10 +1,11 @@
+import React from "react";
 import { ComponentContainerDiv, TextH4, Button } from "../StyledComponents/StyledComponents";
 import styled from "styled-components";
 import ContactsIcons from "./ContactsIcons";
 import { useState } from "react";
 import { send } from 'emailjs-com';
 
-const ContactMe = () => {
+const ContactMe = React.forwardRef((props, ref) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [body, setBody] = useState('');
@@ -35,7 +36,7 @@ const ContactMe = () => {
     }
 
     return (
-        <ComponentContainerDiv color={'black'}>
+        <ComponentContainerDiv color={'black'} ref={ref}>
             <ComponentSubContainerHorizontalDiv>
                 <FlexBoxHorizontalDiv>
                     <ContactMeTitleH2 color={'white'}>Let's Contact</ContactMeTitleH2>
@@ -59,7 +60,7 @@ const ContactMe = () => {
             </ComponentSubContainerHorizontalDiv>
         </ComponentContainerDiv>
     )
-}
+})
 
 export default ContactMe;
 

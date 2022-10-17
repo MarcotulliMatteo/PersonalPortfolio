@@ -5,6 +5,7 @@ export const ComponentContainerDiv = styled.div`
     justify-content: center;
     align-items: center;
     background-color: ${props => props.color};
+    scroll-margin: 30px;
 `
 
 export const ComponentSubContainerDiv = styled.div`

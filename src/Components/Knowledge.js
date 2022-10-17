@@ -1,10 +1,11 @@
+import React from "react";
 import styled from "styled-components";
 import { FaMobile, FaCode, FaDatabase } from "react-icons/fa";
 import { ComponentContainerDiv, ComponentSubContainerDiv, SectionTitleH2, TextH3, TextH4 } from "../StyledComponents/StyledComponents";
 
-const Knowledge = () => {
+const Knowledge = React.forwardRef((props, ref) => {
     return (
-        <ComponentContainerDiv color={'white'}>
+        <ComponentContainerDiv color={'white'} ref={ref}>
             <ComponentSubContainerDiv>
                 <SectionTitleH2 color={'black'}>My Knowledge</SectionTitleH2>
                 <CardContainerDiv>
@@ -27,7 +28,7 @@ const Knowledge = () => {
             </ComponentSubContainerDiv>
         </ComponentContainerDiv>
     )
-}
+})
 
 export default Knowledge;
 
@@ -50,7 +51,7 @@ const CardDiv = styled.div`
     display: flex;
     flex-direction: column;
     width: 30vh;
-    height: 180px;
+    height: 200px;
     text-align: center;
 `
 
