@@ -10,9 +10,9 @@ const Header = (props) => {
     return (
         <HeaderContainerDiv>
             <HeaderDiv>
-                <HeaderH2>Matteo<YellowSpan>.</YellowSpan></HeaderH2>
+                <HeaderH2>Matteo Marcotulli <YellowSpan>.</YellowSpan></HeaderH2>
                 {
-                    width > 900 ? 
+                    width > 1050 ? 
                         <HeaderButtonContainer>
                             <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.MAINSECTION)}>Home</HeaderH3>
                             <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.KNOWLEDGE)}>Knowledge</HeaderH3>
@@ -70,4 +70,7 @@ const HeaderH3 = styled.h3`
 
 const StyledAiOutlineMenu = styled(AiOutlineMenu)`
     color: white;
+    &:hover {
+        color: yellow;
+    }
 `

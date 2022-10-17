@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ContactsIcons = () => {
     return (
         <IconDiv>
-            <a href="" target='_blank' rel="noreferrer">
+            <a href="https://www.instagram.com/marcotullimatteo/" target='_blank' rel="noreferrer">
                 <StyledGrInstagram size={20}/>
             </a>
             <a href="https://www.linkedin.com/in/matteo-marcotulli-31b6651b1" target='_blank' rel="noreferrer">

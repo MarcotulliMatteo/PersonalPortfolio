@@ -27,6 +27,7 @@ const ContainerDivDrawer = styled.div`
     opacity: 0.9;
     text-align: center;
     padding-top: 50px;
+    z-index: 13;
 `
 
 const DrawerText = styled.h2`
