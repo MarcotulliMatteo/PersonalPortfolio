@@ -6,33 +6,35 @@ import { useState } from "react";
 import { send } from 'emailjs-com';
 
 const ContactMe = React.forwardRef((props, ref) => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [body, setBody] = useState('');
+    const [toSend, setToSend] = useState({
+        name: '',
+        email: '',
+        message: ''
+    })
 
     const handleSumbit = (event) => {
         event.preventDefault()
 
-        send(
+        send (
             'service_xlau9qh',
             'template_gt98oga',
             {
-                from_name: name,
+                from_name: toSend.name,
                 to_name: 'Matteo',
-                message: body,
+                message: toSend.message,
             },
             '8RZCv5wM6WZvMsJeg'
-          )
-            .then((response) => {
-              console.log('SUCCESS!', response.status, response.text);
-              alert('Email sent to Matteo. Thank you!')
-              setName('')
-              setEmail('')
-              setBody('')
+        ).then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Email sent to Matteo. Thank you!')
+            setToSend({
+                name: '',
+                email: '',
+                message: ''
             })
-            .catch((err) => {
-                alert("There is an error with the Email service, try angain later or send an email directly to matteomarcotulli@gmail.com")
-            });
+        }).catch((err) => {
+            alert("There is an error with the Email service, try angain later or send an email directly to matteomarcotulli@gmail.com")
+        });
     }
 
     return (
@@ -45,14 +47,14 @@ const ContactMe = React.forwardRef((props, ref) => {
                 </FlexBoxHorizontalDiv>
                 <FlexBoxHorizontalDiv>
                     <Form onSubmit={handleSumbit}>
-                        <Input type='text' value={name} height={'30px'}
-                         onChange={(e) => setName(e.target.value)}
+                        <Input type='text' value={toSend.name} height={'30px'}
+                         onChange={(e) => setToSend({...toSend, name: e.target.value})}
                          placeholder='Your Name...'/>
-                        <Input type='email' value={email} height={'30px'}
-                         onChange={(e) => setEmail(e.target.value)}
+                        <Input type='email' value={toSend.email} height={'30px'}
+                         onChange={(e) =>  setToSend({...toSend, email: e.target.value})}
                          placeholder='Your Email...'/>
-                        <Textarea value={body} height={'150px'}
-                         onChange={(e) => setBody(e.target.value)}
+                        <Textarea value={toSend.message} height={'150px'}
+                         onChange={(e) =>  setToSend({...toSend, message: e.target.value})}
                          placeholder='Your Message...'/>
                         <Button>Send</Button>
                     </Form>
