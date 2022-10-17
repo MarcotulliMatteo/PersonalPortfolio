@@ -1,51 +1,35 @@
 import styled from "styled-components";
 import { FaMobile, FaCode, FaDatabase } from "react-icons/fa";
+import { ComponentContainerDiv, ComponentSubContainerDiv, SectionTitleH2, TextH3, TextH4 } from "../StyledComponents/StyledComponents";
 
 const Knowledge = () => {
     return (
-        <KnowContainerDiv>
-            <KnowDiv>
-                <KnowH2>My Knowledge</KnowH2>
+        <ComponentContainerDiv color={'white'}>
+            <ComponentSubContainerDiv>
+                <SectionTitleH2 color={'black'}>My Knowledge</SectionTitleH2>
                 <CardContainerDiv>
                     <CardDiv>
                         <FaDatabaseStyled size={25}/>
-                        <KnowH3>Back-end Developer</KnowH3>
-                        <KnowH4>4+ years of experience on Backend development with Sap Cloud Platform CAP and Node.js</KnowH4>
+                        <TextH3>Back-end Developer</TextH3>
+                        <TextH4>4+ years of experience on Backend development with Sap Cloud Platform CAP and Node.js</TextH4>
                     </CardDiv>
                     <CardDiv>
                         <FaCodeStyled size={25}/>
-                        <KnowH3>Web Developer</KnowH3>
-                        <KnowH4>3+ years of experience on Web Development using Sapui5 and React</KnowH4>
+                        <TextH3>Web Developer</TextH3>
+                        <TextH4>3+ years of experience on Web Development using Sapui5 and React</TextH4>
                     </CardDiv>
                     <CardDiv>
                         <FaMobileStyled size={25}/>
-                        <KnowH3>Mobile Developer</KnowH3>
-                        <KnowH4>3+ years of experience on Mobile development React Native and Android Native</KnowH4>
+                        <TextH3>Mobile Developer</TextH3>
+                        <TextH4>3+ years of experience on Mobile development React Native and Android Native</TextH4>
                     </CardDiv>
                 </CardContainerDiv>
-            </KnowDiv>
-        </KnowContainerDiv>
+            </ComponentSubContainerDiv>
+        </ComponentContainerDiv>
     )
 }
 
 export default Knowledge;
-
-const KnowContainerDiv = styled.div`
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-`
-
-const KnowDiv = styled.div`
-    width: 65%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    gap: 20px;
-    padding: 40px 0px 40px 0px;
-`
 
 const CardContainerDiv = styled.div`
     margin: 0 auto;
@@ -56,10 +40,6 @@ const CardContainerDiv = styled.div`
     gap: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-`
-
-const KnowH2 = styled.h2`
-    border-bottom: 3px solid yellow;
 `
 
 const CardDiv = styled.div`
@@ -86,10 +66,3 @@ const FaDatabaseStyled = styled(FaDatabase)`
     color: yellow;
 `
 
-const KnowH3 = styled.h3`
-    color: white;
-`
-
-const KnowH4 = styled.h4`
-    color: white;
-`

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { YellowSpan } from "../Screens/Home";
+import { YellowSpan } from "../StyledComponents/StyledComponents";
 
 const Header = () => {
     return (
