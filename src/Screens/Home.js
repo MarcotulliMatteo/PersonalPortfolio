@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "../Components/Header";
 import MainSection from "../Components/MainSection";
 import Knowledge from "../Components/Knowledge";
@@ -16,6 +16,13 @@ const Home = () => {
     const aboutMeSectionRef = useRef();
     const recentProjectsSectionRef = useRef();
     const contactMeSectionRef = useRef();
+
+    useEffect(() => {
+        showDrawer ? 
+            document.body.style.overflow = 'hidden'
+        :
+            document.body.style.overflow = 'auto'
+    }, [showDrawer])
     
     const executeScrollToSection = (section) => {
         if(showDrawer) {
