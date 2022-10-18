@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import homebackground from "../Images/home.jpg";
+import homebackground from "../Images/home.png";
 
 import { TextH1, TextH3, TextH4, YellowSpan } from "../StyledComponents/StyledComponents";
 import ContactsIcons from "./ContactsIcons";
@@ -29,6 +29,7 @@ const HomeContainerDiv = styled.div`
     align-items: center;
     background-color: black;
     height:100vh;
+    margin-top: 30px;
     background-image: url(${homebackground});
     background-size: cover;
     background-position: center;

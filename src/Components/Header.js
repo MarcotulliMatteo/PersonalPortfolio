@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { YellowSpan } from "../StyledComponents/StyledComponents";
+import { BorderBottomAppearH3, YellowSpan } from "../StyledComponents/StyledComponents";
 import { SECTIONS } from "../Utils/constants";
 import useViewport from "../CustomHooks/useViewport";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -14,11 +14,11 @@ const Header = (props) => {
                 {
                     width > 1050 ? 
                         <HeaderButtonContainer>
-                            <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.MAINSECTION)}>Home</HeaderH3>
-                            <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.KNOWLEDGE)}>Knowledge</HeaderH3>
-                            <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.ABOUTME)}>About me</HeaderH3>
-                            <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.RECENTPROJECTS)}>Projects</HeaderH3>
-                            <HeaderH3 onClick={() => props.executeScrollToSection(SECTIONS.CONTACTME)}>Contact me</HeaderH3>
+                            <BorderBottomAppearH3 onClick={() => props.executeScrollToSection(SECTIONS.MAINSECTION)}>Home</BorderBottomAppearH3>
+                            <BorderBottomAppearH3 onClick={() => props.executeScrollToSection(SECTIONS.KNOWLEDGE)}>Knowledge</BorderBottomAppearH3>
+                            <BorderBottomAppearH3 onClick={() => props.executeScrollToSection(SECTIONS.ABOUTME)}>About me</BorderBottomAppearH3>
+                            <BorderBottomAppearH3 onClick={() => props.executeScrollToSection(SECTIONS.RECENTPROJECTS)}>Projects</BorderBottomAppearH3>
+                            <BorderBottomAppearH3 onClick={() => props.executeScrollToSection(SECTIONS.CONTACTME)}>Contact me</BorderBottomAppearH3>
                         </HeaderButtonContainer>
                     :
                         <StyledAiOutlineMenu size={25} onClick={() => props.onDrawerClick()}/>
@@ -58,14 +58,6 @@ const HeaderButtonContainer = styled.div`
 const HeaderH2 = styled.h2`
     color: white;
     border-bottom: 3px solid black;
-`
-
-const HeaderH3 = styled.h3`
-    color: white;
-    border-bottom: 3px solid black;
-    &:hover {
-        border-bottom: 3px solid yellow;
-    }
 `
 
 const StyledAiOutlineMenu = styled(AiOutlineMenu)`

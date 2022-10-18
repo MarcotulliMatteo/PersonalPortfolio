@@ -51,7 +51,7 @@ const ContactMe = React.forwardRef((props, ref) => {
 
     const validEmail = (email) => {
         var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-        return String(email).search (filter) != -1;
+        return String(email).search (filter) !== -1;
     }
 
     return (
@@ -59,7 +59,7 @@ const ContactMe = React.forwardRef((props, ref) => {
             <ComponentSubContainerHorizontalDiv>
                 <FlexBoxHorizontalDiv>
                     <ContactMeTitleH2 color={'white'}>Let's Contact</ContactMeTitleH2>
-                    <TextH4>For eny question or job opportunity write me!</TextH4>
+                    <TextH4>For any question or job opportunity write me!</TextH4>
                     <ContactsIcons/>
                 </FlexBoxHorizontalDiv>
                 <FlexBoxHorizontalDiv>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FaMobile, FaCode, FaDatabase } from "react-icons/fa";
-import { ComponentContainerDiv, ComponentSubContainerDiv, SectionTitleH2, TextH3, TextH4 } from "../StyledComponents/StyledComponents";
+import { ComponentContainerDiv, ComponentSubContainerDiv, CardContainerDiv, SectionTitleH2, TextH3, TextH4, CardDiv } from "../StyledComponents/StyledComponents";
 
 const Knowledge = React.forwardRef((props, ref) => {
     return (
@@ -31,29 +31,6 @@ const Knowledge = React.forwardRef((props, ref) => {
 })
 
 export default Knowledge;
-
-const CardContainerDiv = styled.div`
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content:center;
-    gap: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-`
-
-const CardDiv = styled.div`
-    background-color: black;
-    border-radius: 10px;
-    padding: 15px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 30vh;
-    height: 200px;
-    text-align: center;
-`
 
 const FaMobileStyled = styled(FaMobile)`
     color: yellow;
