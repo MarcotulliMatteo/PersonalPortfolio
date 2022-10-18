@@ -14,16 +14,16 @@ const ProjectCard = (props) => {
             <Overlay opacity={mouseOver ? 0.7 : 0}
              onMouseOver={() => setMouseOver(true)}
              onMouseLeave={() => setMouseOver(false)}>
-                <TextH3>{props.title}</TextH3>
-                <TextH4>{props.description}</TextH4>
+                <TextH4>{props.title}</TextH4>
+                <Text>{props.description}</Text>
                 <ButtonDiv>
                     {props.showCode && 
-                        <a href={props.codeHref} target='_blank' rel="noreferrer" style={{textDecoration: 'none'}}>
+                        <a href={props.codeHref ? props.codeHref : null} target='_blank' rel="noreferrer" style={{textDecoration: 'none'}}>
                             <BorderBottomAppearH3 color="white">Code</BorderBottomAppearH3>
                         </a>
                     }
                     {props.showProject &&
-                        <a href="https://github.com/MarcotulliMatteo/PersonalPortfolio" target='_blank' rel="noreferrer" style={{textDecoration: 'none'}}>
+                        <a href={props.projectHref ? props.projectHref : null} target='_blank' rel="noreferrer" style={{textDecoration: 'none'}}>
                             <BorderBottomAppearH3 color="white">Project</BorderBottomAppearH3>
                         </a>
                     }
