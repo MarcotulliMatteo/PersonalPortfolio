@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { TextH3, TextH4, BorderBottomAppearH3 } from "../StyledComponents/StyledComponents";
+import { TextH4, BorderBottomAppearH3 } from "../StyledComponents/StyledComponents";
 
 const ProjectCard = (props) => {
     const [mouseOver, setMouseOver] = useState(false)
