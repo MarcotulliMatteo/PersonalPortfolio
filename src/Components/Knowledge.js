@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FaMobile, FaCode, FaDatabase } from "react-icons/fa";
+import { BsPeopleFill } from "react-icons/bs";
 import { ComponentContainerDiv, ComponentSubContainerDiv, CardContainerDiv, SectionTitleH2, TextH3, TextH4, CardDiv } from "../StyledComponents/StyledComponents";
 
 const Knowledge = React.forwardRef((props, ref) => {
@@ -24,6 +25,11 @@ const Knowledge = React.forwardRef((props, ref) => {
                         <TextH3>Mobile Developer</TextH3>
                         <TextH4>3+ years of experience on Mobile development React Native and Android Native</TextH4>
                     </CardDiv>
+                    <CardDiv>
+                        <BsPeopleFillStyled size={25}/>
+                        <TextH3>Team Leadership</TextH3>
+                        <TextH4>1+ year of experience as FrontEnd/BeckEnd Team Leader</TextH4>
+                    </CardDiv>
                 </CardContainerDiv>
             </ComponentSubContainerDiv>
         </ComponentContainerDiv>
@@ -44,3 +50,6 @@ const FaDatabaseStyled = styled(FaDatabase)`
     color: yellow;
 `
 
+const BsPeopleFillStyled = styled(BsPeopleFill)`
+    color: yellow;
+`

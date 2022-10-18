@@ -10,7 +10,7 @@ const RecentProjects = React.forwardRef((props, ref) => {
     return (
         <ComponentContainerDiv color={'white'} ref={ref}>
             <ComponentSubContainerDiv>
-                <SectionTitleH2 color={'black'}>Recent Projects</SectionTitleH2>
+                <SectionTitleH2 color={'black'}>My Projects</SectionTitleH2>
                 <CardContainerDiv>
                     <ProjectCard color='rgb(41,58,80)' image={portfolioProject}
                      title='Portfolio' description="This is my Portfolio, written in React"
@@ -23,7 +23,7 @@ const RecentProjects = React.forwardRef((props, ref) => {
 
                     <ProjectCard color='rgb(88,21,137)' image={billReminder}
                      title='Bill Reminder' description="Mobile Application for Store all the Bill to be paid and already paid. The project is written in React Native using Firebase."
-                     showCode={true} showProject={true} codeHref="https://github.com/MarcotulliMatteo/BillReminder"/>
+                     showCode={true} showProject={false} codeHref="https://github.com/MarcotulliMatteo/BillReminder"/>
                 </CardContainerDiv>
             </ComponentSubContainerDiv>
         </ComponentContainerDiv>
