@@ -3,7 +3,8 @@ import { ComponentContainerDiv, ComponentSubContainerDiv, CardContainerDiv, Sect
 import ProjectCard from "./ProjectCard";
 
 import portfolioProject from "../Images/Portfolio.png";
-import guessTheWordGame from "../Images/GuessTheWordGame.png"
+import guessTheWordGame from "../Images/GuessTheWordGame.png";
+import billReminder from "../Images/BillReminder.png";
 
 const RecentProjects = React.forwardRef((props, ref) => {
     return (
@@ -19,6 +20,10 @@ const RecentProjects = React.forwardRef((props, ref) => {
                      title='Guess The Word' description="This is a Game in which you have to guess a word. The projest is written in React."
                      showCode={true} showProject={true} codeHref="https://github.com/MarcotulliMatteo/GuessTheWordGame"
                      projectHref="https://vermillion-clafoutis-eced69.netlify.app/"/>
+
+                    <ProjectCard color='rgb(68,67,69)' image={billReminder}
+                     title='Bill Reminder' description="Mobile Application for Store all the Bill to be paid and already paid. The project is written in React Native using Firebase."
+                     showCode={true} showProject={true} codeHref="https://github.com/MarcotulliMatteo/BillReminder"/>
                 </CardContainerDiv>
             </ComponentSubContainerDiv>
         </ComponentContainerDiv>

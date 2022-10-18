@@ -11,7 +11,7 @@ const ProjectCard = (props) => {
                 <Text>{props.title}</Text>
                 <Image src={props.image}/>
             </ImageContainerDiv>
-            <Overlay opacity={mouseOver ? 0.7 : 0}
+            <Overlay opacity={mouseOver ? 0.8 : 0}
              onMouseOver={() => setMouseOver(true)}
              onMouseLeave={() => setMouseOver(false)}>
                 <TextH4>{props.title}</TextH4>
@@ -39,8 +39,8 @@ const CardDiv = styled.div`
     border-radius: 10px;
     padding: 15px;
     align-items: center;
-    width: 30vh;
-    height: 160px;
+    width: 33vh;
+    height: 200px;
     text-align: center;
     background-color: ${props => props.color};
     justify-content: center;
@@ -75,8 +75,8 @@ const Text = styled.p`
 
 const Overlay = styled.div`
     padding: 15px; 
-    width: 30vh;
-    height: 160px;
+    width: 33vh;
+    height: 200px;
     border-radius: 10px;
     opacity: ${props => props.opacity};
     background-color: black;
