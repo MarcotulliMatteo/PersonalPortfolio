@@ -17,8 +17,8 @@ const RecentProjects = React.forwardRef((props, ref) => {
 
                     <ProjectCard color='rgb(68,67,69)' image={guessTheWordGame}
                      title='Guess The Word' description="This is a Game in which you have to guess a word. The projest is written in React."
-                     showCode={true} showProject={true} codeHref="https://github.com/MarcotulliMatteo/PersonalPortfolio"
-                     projectHref="https://github.com/MarcotulliMatteo/PersonalPortfolio"/>
+                     showCode={true} showProject={true} codeHref="https://github.com/MarcotulliMatteo/GuessTheWordGame"
+                     projectHref="https://vermillion-clafoutis-eced69.netlify.app/"/>
                 </CardContainerDiv>
             </ComponentSubContainerDiv>
         </ComponentContainerDiv>
