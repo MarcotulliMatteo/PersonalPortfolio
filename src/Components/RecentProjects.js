@@ -12,7 +12,7 @@ const RecentProjects = React.forwardRef((props, ref) => {
             <ComponentSubContainerDiv>
                 <SectionTitleH2 color={'black'}>Recent Projects</SectionTitleH2>
                 <CardContainerDiv>
-                    <ProjectCard color='rgb(123,95,242)' image={portfolioProject}
+                    <ProjectCard color='rgb(41,58,80)' image={portfolioProject}
                      title='Portfolio' description="This is my Portfolio, written in React"
                      showCode={true} showProject={false} codeHref="https://github.com/MarcotulliMatteo/PersonalPortfolio"/>
 
@@ -21,7 +21,7 @@ const RecentProjects = React.forwardRef((props, ref) => {
                      showCode={true} showProject={true} codeHref="https://github.com/MarcotulliMatteo/GuessTheWordGame"
                      projectHref="https://vermillion-clafoutis-eced69.netlify.app/"/>
 
-                    <ProjectCard color='rgb(68,67,69)' image={billReminder}
+                    <ProjectCard color='rgb(88,21,137)' image={billReminder}
                      title='Bill Reminder' description="Mobile Application for Store all the Bill to be paid and already paid. The project is written in React Native using Firebase."
                      showCode={true} showProject={true} codeHref="https://github.com/MarcotulliMatteo/BillReminder"/>
                 </CardContainerDiv>
